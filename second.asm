@@ -3,7 +3,7 @@
 
 .data  
     print db 'Enter a char: $'
-    input db ?          
+          
 
 .code
 main proc

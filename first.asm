@@ -12,7 +12,7 @@ main proc
 
     ; Display prompt
     mov ah, 09h        ; 09h is DOS interrupt function and we must use 'ah' register to store dos function like '09h, 01h'
-                       ; 09h to print a string that ends with '$' and works with 'dx' register
+                          ; 09h to print a string that ends with '$' and works with 'dx' register
     lea dx, message    ; Load the address of the 'message' string
     int 21h            ; Call DOS interrupt ,
 
@@ -27,7 +27,7 @@ main proc
     int 21h            ; Call DOS interrupt
 
     ; Exit the program
-    mov ah, 4Ch        ; DOS service to exit program
-    int 21h            ; Call DOS interrupt
+     mov ah, 4Ch        ; DOS service to exit program
+     int 21h            ; Call DOS interrupt
 
 main endp
