@@ -14,14 +14,14 @@ main proc
     
     
     Begin:
-    lea dx,m1
-    mov ah,9
-    int 21h 
+        lea dx,m1
+        mov ah,9
+        int 21h 
           
     input:
-    mov ah,1
-    int 21h 
-    
+        mov ah,1
+        int 21h 
+        
     cmp al,'0'
     jl illegal_check
     cmp al,'9'
@@ -33,24 +33,24 @@ main proc
     int 21h
     
     msg_show:
-    mov ah,9
-    lea dx,m3
-    int 21h
-    
-    mov ah,1   ; take input y or n
-    int 21h
-    
-    cmp al,'Y'
-    je Begin 
-    cmp al,'y'
-    je Begin
-    jmp end_
+        mov ah,9
+        lea dx,m3
+        int 21h
+            
+        mov ah,1   ; take input y or n
+        int 21h
+        
+        cmp al,'Y'
+        je Begin 
+        cmp al,'y'
+        je Begin
+        jmp end_
     
     illegal_check:
-    cmp al,'A' 
-    jl illegal
-    cmp al,'F'
-    jg illegal
+        cmp al,'A' 
+        jl illegal
+        cmp al,'F'
+        jg illegal
     
     sub al,11h
     mov c2,al
@@ -61,17 +61,14 @@ main proc
     jmp msg_show
         
     illegal:
-    mov ah,9
-    lea dx,m4
-    int 21h
-    jmp input 
-    
+        mov ah,9
+        lea dx,m4
+        int 21h
+        jmp input 
+        
     end_:
     mov ah,4ch
     int 21h
     main endp
 end main
-
-
-
 
